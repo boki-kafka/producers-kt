@@ -14,7 +14,9 @@ dependencies {
     // https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
     implementation("org.apache.kafka:kafka-clients:3.6.1")
     // https://mvnrepository.com/artifact/io.github.oshai/kotlin-logging
-    runtimeOnly("io.github.oshai:kotlin-logging:7.0.0")
+    implementation("io.github.oshai:kotlin-logging:7.0.0")
+    implementation("org.slf4j:slf4j-api:2.0.16")
+    implementation("org.slf4j:slf4j-simple:2.0.16")
 }
 
 tasks.test {
