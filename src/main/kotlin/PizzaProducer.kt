@@ -1,5 +1,6 @@
 import io.github.oshai.kotlinlogging.KotlinLogging
 import net.datafaker.Faker
+import org.apache.kafka.clients.consumer.ConsumerConfig
 import org.apache.kafka.clients.producer.KafkaProducer
 import org.apache.kafka.clients.producer.ProducerConfig.*
 import org.apache.kafka.clients.producer.ProducerRecord
@@ -101,7 +102,7 @@ class PizzaProducer {
             valueSerClass: Class<V>
         ): Properties {
             val props = Properties().apply {
-                put(BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
+                put(BOOTSTRAP_SERVERS_CONFIG, "10.211.55.53:9092")
                 put(KEY_SERIALIZER_CLASS_CONFIG, keySerClass.name)
                 put(VALUE_SERIALIZER_CLASS_CONFIG, valueSerClass.name)
             }
