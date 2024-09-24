@@ -87,10 +87,10 @@ class PizzaProducer {
                 producer = producer,
                 topicName = topic,
                 iterCnt = -1,
-                interIntervalMillis = 100,
-                intervalMillis = 1000,
-                intervalCount = 100,
-                isSync = false
+                interIntervalMillis = 1000,
+                intervalMillis = 0,
+                intervalCount = 0,
+                isSync = true
             )
 
             producer.close()
@@ -101,7 +101,7 @@ class PizzaProducer {
             valueSerClass: Class<V>
         ): Properties {
             val props = Properties().apply {
-                put(BOOTSTRAP_SERVERS_CONFIG, "10.211.55.53:9092")
+                put(BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
                 put(KEY_SERIALIZER_CLASS_CONFIG, keySerClass.name)
                 put(VALUE_SERIALIZER_CLASS_CONFIG, valueSerClass.name)
             }
